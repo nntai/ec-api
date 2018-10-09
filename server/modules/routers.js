@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 module.exports = expressRouter => {
-  console.log('Registering routers...', expressRouter);
+  console.log('Registering routers...');
 
   const modulesPath = path.resolve(__dirname, './');
   const routers = fs
