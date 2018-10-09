@@ -12,7 +12,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { IntlProvider } from 'react-intl';
 
-import { actions } from './../../reducers/language';
+import { makeSelectLocale } from './../../reducers/language';
 
 export class LanguageProvider extends React.PureComponent {
   // eslint-disable-line react/prefer-stateless-function
@@ -35,7 +35,7 @@ LanguageProvider.propTypes = {
   children: PropTypes.element.isRequired,
 };
 
-const mapStateToProps = createSelector(actions.makeSelectLocale(), locale => ({
+const mapStateToProps = createSelector(makeSelectLocale(), locale => ({
   locale,
 }));
 

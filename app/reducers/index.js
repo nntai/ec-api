@@ -16,3 +16,5 @@ export default function createReducer(injectedReducers) {
     ...injectedReducers,
   });
 }
+
+export const REHYDRATION_COMPLETE = 'rehydration/COMPLETE';

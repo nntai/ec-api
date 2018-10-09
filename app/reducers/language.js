@@ -1,7 +1,7 @@
 import { fromJS } from 'immutable';
 import { createSelector } from 'reselect';
 
-import { DEFAULT_LOCALE } from '../../i18n'; // eslint-disable-line
+import { DEFAULT_LOCALE } from '../i18n'; // eslint-disable-line
 
 export const CHANGE_LOCALE = 'app/LanguageToggle/CHANGE_LOCALE';
 
