@@ -16,9 +16,6 @@ import { ConnectedRouter } from 'react-router-redux';
 import createHistory from 'history/createBrowserHistory';
 import 'sanitize.css/sanitize.css';
 
-// Import root app
-import App from 'containers/App';
-
 // Import Language Provider
 import LanguageProvider from 'containers/LanguageProvider';
 
@@ -32,6 +29,9 @@ import configureStore from './configureStore';
 
 // Import i18n messages
 import { translationMessages } from './i18n';
+
+// Import root app
+import App from './routers';
 
 // Import CSS reset and Global Styles
 import './global-styles';
