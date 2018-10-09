@@ -40,5 +40,11 @@ module.exports = {
       templateFile: './module/controller.js.hbs',
       abortOnFail: true,
     },
+    {
+      type: 'add',
+      path: '../../server/modules/{{camelCase name}}/index.js',
+      templateFile: './module/index.js.hbs',
+      abortOnFail: true,
+    },
   ],
 };
