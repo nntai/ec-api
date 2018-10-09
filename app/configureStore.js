@@ -7,7 +7,7 @@ import { fromJS } from 'immutable';
 import { routerMiddleware } from 'react-router-redux';
 import createSagaMiddleware from 'redux-saga';
 import { persistStore, autoRehydrate } from 'redux-persist-immutable';
-import localForage from 'localforage';
+
 import createReducer from './reducers';
 import rootSaga from './sagas';
 
@@ -19,7 +19,10 @@ export default function configureStore(initialState = {}, history) {
   // 2. routerMiddleware: Syncs the location/URL path to the state
   const middlewares = [sagaMiddleware, routerMiddleware(history)];
 
-  const enhancers = [applyMiddleware(...middlewares), autoRehydrate()];
+  const enhancers = [
+    applyMiddleware(...middlewares),
+    autoRehydrate({ log: true }),
+  ];
 
   // If Redux DevTools Extension is installed use it, otherwise use Redux compose
   /* eslint-disable no-underscore-dangle, indent */
@@ -40,20 +43,9 @@ export default function configureStore(initialState = {}, history) {
     fromJS(initialState),
     composeEnhancers(...enhancers),
   );
-
-  // add refux persist store
-  window.persistor = persistStore(
-    store,
-    {
-      storage: localForage,
-      whitelist: [
-        /* app-specific keys */
-      ],
-    },
-    () => {
-      console.log('Redux-Persist loaded state');
-    },
-  );
+  persistStore(store, {
+    whitelist: ['persist'],
+  });
 
   // start sagas
   sagaMiddleware.run(rootSaga);
@@ -70,6 +62,5 @@ export default function configureStore(initialState = {}, history) {
       store.replaceReducer(createReducer(store.injectedReducers));
     });
   }
-
   return store;
 }

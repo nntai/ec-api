@@ -1,14 +1,34 @@
-import React from 'react';
-import { FormattedMessage } from 'react-intl';
-import messages from './messages';
+/*
+ *
+ * LanguageProvider
+ *
+ * this component connects the redux state language locale to the
+ * IntlProvider component and i18n messages (loaded from `app/translations`)
+ */
 
-/* eslint-disable react/prefer-stateless-function */
-export default class StorePage extends React.PureComponent {
-  render() {
-    return (
-      <h1>
-        <FormattedMessage {...messages.header} />
-      </h1>
-    );
-  }
+import React from 'react';
+import { connect } from 'react-redux';
+import { createSelector } from 'reselect';
+import StorePage from '../../components/StorePage';
+// import { makeSelectNumber, actions } from '../../reducers/store';
+import { makeSelectNumberPersist, actions } from '../../reducers/persist';
+
+export const StorePageContainer = props => <StorePage {...props} />;
+
+StorePageContainer.propTypes = {};
+
+const mapStateToProps = createSelector(makeSelectNumberPersist(), number => ({
+  number,
+}));
+
+function mapDispatchToProps(dispatch) {
+  return {
+    dispatch,
+    increaseNumber: () => dispatch(actions.increaseNumberPersist()),
+  };
 }
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(StorePageContainer);

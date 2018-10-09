@@ -29,7 +29,6 @@ import configureStore from './configureStore';
 
 // Import i18n messages
 import { translationMessages } from './i18n';
-
 // Import root app
 import App from './routers';
 
