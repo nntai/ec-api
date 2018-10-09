@@ -8,6 +8,7 @@ const port = require('./port');
 const setup = require('./middlewares/frontendMiddleware');
 
 const connectDb = require('./db');
+const registerRouters = require('./modules/routers');
 
 connectDb();
 
@@ -19,13 +20,10 @@ const ngrok =
 const { resolve } = require('path');
 const app = express();
 
-// If you need a backend, e.g. an API, add your custom backend-specific middleware here
-app.get('/hahaha', (req, res) => {
-  res.json({
-    data: 1,
-    d: 1,
-  });
-});
+// register routers
+let router = express.Router();
+router = registerRouters(router);
+app.use('/', router);
 
 // In production we need to pass these values in instead of relying on webpack
 setup(app, {
@@ -43,7 +41,6 @@ app.listen(port, host, async err => {
   if (err) {
     return logger.error(err.message);
   }
-
   // Connect to ngrok in dev mode
   if (ngrok) {
     let url;
