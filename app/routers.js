@@ -3,7 +3,7 @@ import { objectOf, any } from 'prop-types';
 import { Switch, Route, Router } from 'react-router-dom';
 
 import MainLayout from 'containers/MainLayout/Loadable';
-import HomePage from 'containers/HomePage/Loadable';
+import ProductBoardPage from 'containers/ProductBoardPage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import StorePage from 'containers/StorePage/Loadable';
 
@@ -14,7 +14,7 @@ export default function App({ history }) {
         <div>
           <MainLayout>
             <Switch>
-              <Route exact path="/" component={HomePage} />
+              <Route exact path="/" component={ProductBoardPage} />
               <Route exact path="/store" component={StorePage} />
               <Route path="*" component={NotFoundPage} />
             </Switch>
