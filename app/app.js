@@ -12,7 +12,6 @@ import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { ConnectedRouter } from 'react-router-redux';
 import createHistory from 'history/createBrowserHistory';
 import 'sanitize.css/sanitize.css';
 
@@ -30,7 +29,7 @@ import configureStore from './configureStore';
 // Import i18n messages
 import { translationMessages } from './i18n';
 // Import root app
-import App from './routers';
+import Router from './routers';
 
 // Import CSS reset and Global Styles
 import './global-styles';
@@ -45,9 +44,7 @@ const render = messages => {
   ReactDOM.render(
     <Provider store={store}>
       <LanguageProvider messages={messages}>
-        <ConnectedRouter history={history}>
-          <App />
-        </ConnectedRouter>
+        <Router history={history} />
       </LanguageProvider>
     </Provider>,
     MOUNT_NODE,
