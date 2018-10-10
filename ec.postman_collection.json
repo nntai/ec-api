@@ -1,0 +1,138 @@
+{
+  "variables": [],
+  "info": {
+    "name": "ec",
+    "_postman_id": "25d128a6-76fb-9d84-9170-edd019658f3b",
+    "description": "",
+    "schema":
+      "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "localhost:3000/products/getAll",
+      "request": {
+        "url": "localhost:3000/products/getall",
+        "method": "GET",
+        "header": [],
+        "body": {},
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "name": "localhost:3000/products/outofdate",
+      "request": {
+        "url": "localhost:3000/products/outofdate",
+        "method": "GET",
+        "header": [],
+        "body": {},
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "name": "localhost:3000/products/get/id",
+      "request": {
+        "url": "localhost:3000/products/get/5bbd7114248dea2abebe1a45",
+        "method": "GET",
+        "header": [],
+        "body": {},
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "name": "localhost:3000/products/delete",
+      "request": {
+        "url": "localhost:3000/products/delete/5bbd70de248dea2abebe1a44",
+        "method": "GET",
+        "header": [],
+        "body": {},
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "name": "localhost:3000/products/insert",
+      "request": {
+        "url": "localhost:3000/products/insert",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw":
+            "{\n\t\"name\": \"product 01\",\n\t\"description\": \"this is product 01\",\n\t\"price\": 1500,\n\t\"abc\": 1\n}"
+        },
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "name": "localhost:3000/orders/insert",
+      "request": {
+        "url": "localhost:3000/orders/insert",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"customer\": \"David Beckham\",\n\t\"total\": 200\n}"
+        },
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "name": "localhost:3000/orders/getAll",
+      "request": {
+        "url": "localhost:3000/orders/getall",
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"customer\": \"David Beckham\",\n\t\"total\": 200\n}"
+        },
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "name": "localhost:3000/products/update/id",
+      "request": {
+        "url": "localhost:3000/products/update/5bbd731000b27d2e29fb7c8e",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw":
+            "{\n\t\"name\": \"product 02\",\n\t\"description\": \"this is product 01\",\n\t\"price\": 1500,\n\t\"abc\": 1\n}"
+        },
+        "description": ""
+      },
+      "response": []
+    }
+  ]
+}

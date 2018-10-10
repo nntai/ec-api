@@ -1,14 +1,12 @@
-// const Order = require('./order.model');
+const BaseController = require('../base/base.controller');
+const OrderService = require('./order.service');
 
-// product
-function getOrder(req, res) {
-  try {
-    res.status(200).send('order here!');
-  } catch (err) {
-    res.status(400).send(err);
+const productService = new OrderService();
+
+module.exports = class OrderController extends BaseController {
+  constructor() {
+    super(productService);
   }
-}
 
-module.exports = {
-  getOrder,
+  // TODO: define controllers here
 };

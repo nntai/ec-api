@@ -1,8 +1,16 @@
-const express = require('express');
-const controllers = require('./order.controller');
+const BaseRouter = require('../base/base.route');
+const OrderController = require('./order.controller');
+const orderController = new OrderController();
 
-const router = express.Router();
+module.exports = class OrderRouter extends BaseRouter {
+  constructor() {
+    super(orderController);
+  }
+  setup() {
+    const router = this.init();
 
-router.get('/get', controllers.getOrder);
+    // TODO: setup routers here
 
-module.exports = router;
+    return router;
+  }
+};

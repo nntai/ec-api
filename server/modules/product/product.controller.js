@@ -1,26 +1,21 @@
-const productService = require('./product.service');
+const BaseController = require('../base/base.controller');
+const ProductService = require('./product.service');
 
-// product
-async function insert(req, res) {
-  try {
-    const product = req.body;
-    const result = await productService.insert(product);
-    res.status(200).send(result);
-  } catch (err) {
-    res.status(400).send(err);
+const productService = new ProductService();
+
+module.exports = class ProductController extends BaseController {
+  constructor() {
+    super(productService);
   }
-}
 
-async function getAll(req, res) {
-  try {
-    const result = await productService.getAll();
-    res.status(200).send(result);
-  } catch (err) {
-    res.status(400).send(err);
+  // TODO: define controllers here
+
+  async getOutOfDateProducts(req, res) {
+    try {
+      const result = await productService.getOutOfDateProducts();
+      res.status(200).send(result);
+    } catch (err) {
+      res.status(400).send(err);
+    }
   }
-}
-
-module.exports = {
-  insert,
-  getAll,
 };
