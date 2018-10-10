@@ -3,9 +3,9 @@
 // product
 function getOrder(req, res) {
   try {
-    res.send(200, 'order here!');
+    res.status(200).send('order here!');
   } catch (err) {
-    res.send(400, err);
+    res.status(400).send(err);
   }
 }
 
