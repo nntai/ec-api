@@ -1,8 +1,9 @@
-// const Product = require('./product.model');
+const Product = require('./product.model');
 
 // product
 function getProduct(req, res) {
-  res.send('this is product');
+  const products = Product.find();
+  res.json({ product: products });
 }
 
 module.exports = {
