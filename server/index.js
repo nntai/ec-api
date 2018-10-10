@@ -21,8 +21,7 @@ const { resolve } = require('path');
 const app = express();
 
 // register routers
-let router = express.Router();
-router = registerRouters(router);
+const router = registerRouters();
 app.use('/', router);
 
 // In production we need to pass these values in instead of relying on webpack
