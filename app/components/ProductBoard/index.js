@@ -11,6 +11,8 @@ import React from 'react';
 import ProductItem from 'components/ProductItem/Loadable';
 import { Modal } from 'components/Components';
 
+import ProductDetail from 'containers/ProductDetailContainer/Loadable';
+
 // import messages from './messages';
 import { Wrapper } from './wrapper.styled';
 
@@ -30,7 +32,7 @@ class ProductBoard extends React.PureComponent {
           }}
           contentStyle={{ width: '500px' }}
         >
-          <div>this is modal content</div>
+          <ProductDetail />
         </Modal>
         <ProductItem openDetail={this.openProductDetail} />
         <ProductItem openDetail={this.openProductDetail} />

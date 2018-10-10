@@ -29,3 +29,26 @@ export const Button = styled.button`
     background-color: #2b63bc;
   }
 `;
+
+export const Image = styled.img`
+  color: #0e4075;
+  width: 100%;
+  height: ${props => props.height || 'unset'};
+  object-fit: contain;
+`;
+
+export const H1 = styled.h1`
+  margin-top: unset;
+`;
+
+export const H2 = styled.h2`
+  margin-top: unset;
+`;
+
+export const H3 = styled.h3`
+  margin-top: unset;
+`;
+
+export const H4 = styled.h4`
+  margin-top: unset;
+`;
