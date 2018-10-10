@@ -1,7 +1,7 @@
 const moduleExists = require('../utils/moduleExists');
 
 module.exports = {
-  description: 'Add a container component',
+  description: 'Add a module',
   prompts: [
     {
       type: 'input',
@@ -18,7 +18,7 @@ module.exports = {
       },
     },
   ],
-  actions: data => [
+  actions: () => [
     {
       type: 'add',
       path:
@@ -42,8 +42,9 @@ module.exports = {
     },
     {
       type: 'add',
-      path: '../../server/modules/{{camelCase name}}/index.js',
-      templateFile: './module/index.js.hbs',
+      path:
+        '../../server/modules/{{camelCase name}}/{{camelCase name}}.service.js',
+      templateFile: './module/service.js.hbs',
       abortOnFail: true,
     },
   ],

@@ -1,9 +1,12 @@
-import {{ properCase name }} from './{{camelCase name}}.model';
+const BaseController = require('../base/base.controller');
+const {{ camelCase name }}Service = require('./{{ camelCase name }}.service');
 
-// product
-function get{{properCase name}}(req, res) {
+class {{ properCase name }}Controller extends BaseController {
+  constructor() {
+    super({{ camelCase name }}Service);
+  }
+
+  // TODO: define controllers here
 }
 
-module.export = {
-  get{{properCase name}},
-};
+module.exports = new {{ properCase name }}Controller();

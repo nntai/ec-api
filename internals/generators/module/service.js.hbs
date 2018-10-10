@@ -1,0 +1,11 @@
+const {{camelCase name}}Collection = require('./{{camelCase name}}.model');
+const BaseService = require('../base/base.service');
+class {{properCase name}}Service extends BaseService {
+  constructor() {
+    super({{camelCase name}}Collection);
+  }
+
+  // TODO: setup logics here
+}
+
+module.exports = new {{properCase name}}Service();

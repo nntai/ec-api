@@ -1,9 +1,9 @@
 const BaseRouter = require('../base/base.route');
-const orderController = require('./order.controller');
+const userController = require('./user.controller');
 
-class OrderRouter extends BaseRouter {
+class UserRouter extends BaseRouter {
   constructor() {
-    super(orderController);
+    super(userController);
   }
   setup() {
     const router = this.init();
@@ -14,4 +14,4 @@ class OrderRouter extends BaseRouter {
   }
 }
 
-module.exports = new OrderRouter();
+module.exports = new UserRouter();

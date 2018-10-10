@@ -1,8 +1,17 @@
-const express = require('express');
-const controllers = require('./{{camelCase name}}.controller');
+const BaseRouter = require('../base/base.route');
+const {{camelCase name}}Controller = require('./{{camelCase name}}.controller');
 
-const router = express.Router();
+class {{properCase name}}Router extends BaseRouter {
+  constructor() {
+    super({{camelCase name}}Controller);
+  }
+  setup() {
+    const router = this.init();
 
-// router.get('/', controllers.index);
+    // TODO: setup routers here
 
-module.export = router;
+    return router;
+  }
+}
+
+module.exports = new {{properCase name}}Router();
