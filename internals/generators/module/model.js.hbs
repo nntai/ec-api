@@ -3,6 +3,8 @@ const { Schema } = mongoose;
 
 const {{camelCase name}}Schema = new Schema({
   // schema here
+}, {
+  collection: '{{camelCase name}}'
 });
 
 export default mongoose.model('{{properCase name}}', {{camelCase name}}Schema);

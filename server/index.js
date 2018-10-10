@@ -23,7 +23,7 @@ const app = express();
 // register routers
 let router = express.Router();
 router = registerRouters(router);
-app.use('/', router);
+app.use('/api', router);
 
 // In production we need to pass these values in instead of relying on webpack
 setup(app, {

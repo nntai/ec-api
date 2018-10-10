@@ -1,11 +1,9 @@
-const Product = require('./product.model');
-
-// product
-function getProduct(req, res) {
-  const products = Product.find();
-  res.json({ product: products });
+const mongoose = require('mongoose');
+const Product = mongoose.model('product');
+class ProductController {
+  static getProducts(params) {
+    return Product.find(params);
+  }
 }
 
-module.exports = {
-  getProduct,
-};
+module.exports = ProductController;
