@@ -9,7 +9,7 @@ import StorePage from 'containers/StorePage/Loadable';
 
 export default function App({ history }) {
   return (
-    <div className="layout-main">
+    <div className="layout-main" id="layout-main">
       <Router history={history}>
         <div>
           <MainLayout>

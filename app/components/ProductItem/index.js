@@ -5,7 +5,7 @@
  */
 
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 // import styled from 'styled-components';
 import { Button } from 'components/Components';
 
@@ -21,9 +21,9 @@ import {
 
 import sample from '../../images/sample.jpg';
 
-function ProductItem() {
+function ProductItem({ openDetail }) {
   return (
-    <Wrapper>
+    <Wrapper onClick={openDetail}>
       <ProductImg src={sample} />
       <ProductInfo>
         <TextInfo>
@@ -41,6 +41,8 @@ function ProductItem() {
   );
 }
 
-ProductItem.propTypes = {};
+ProductItem.propTypes = {
+  openDetail: PropTypes.func.isRequired,
+};
 
 export default ProductItem;

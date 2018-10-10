@@ -9,19 +9,36 @@ import React from 'react';
 // import styled from 'styled-components';
 // import { FormattedMessage } from 'react-intl';
 import ProductItem from 'components/ProductItem/Loadable';
+import { Modal } from 'components/Components';
 
 // import messages from './messages';
 import { Wrapper } from './wrapper.styled';
 
-function ProductBoard() {
-  return (
-    <Wrapper>
-      <ProductItem />
-      <ProductItem />
-      <ProductItem />
-      <ProductItem />
-    </Wrapper>
-  );
+class ProductBoard extends React.PureComponent {
+  openProductDetail = e => {
+    e.preventDefault();
+    this.modal.openModal();
+  };
+
+  render() {
+    return (
+      <Wrapper>
+        <Modal
+          label="Product Detail"
+          ref={el => {
+            this.modal = el;
+          }}
+          contentStyle={{ width: '500px' }}
+        >
+          <div>this is modal content</div>
+        </Modal>
+        <ProductItem openDetail={this.openProductDetail} />
+        <ProductItem openDetail={this.openProductDetail} />
+        <ProductItem openDetail={this.openProductDetail} />
+        <ProductItem openDetail={this.openProductDetail} />
+      </Wrapper>
+    );
+  }
 }
 
 ProductBoard.propTypes = {};

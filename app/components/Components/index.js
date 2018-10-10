@@ -1,5 +1,8 @@
 import styled, { css } from 'styled-components';
 
+/* load components */
+export { default as Modal } from './modal';
+
 export const Button = styled.button`
   background-color: #3273dc;
   border-color: transparent;
@@ -22,4 +25,7 @@ export const Button = styled.button`
       border-bottom-right-radius: 6px;
       min-height: 36px;
     `};
+  &:hover {
+    background-color: #2b63bc;
+  }
 `;
