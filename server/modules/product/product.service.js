@@ -1,6 +1,6 @@
 const productCollection = require('./product.model');
 const BaseService = require('../base/base.service');
-module.exports = class ProductService extends BaseService {
+class ProductService extends BaseService {
   constructor() {
     super(productCollection);
   }
@@ -9,4 +9,6 @@ module.exports = class ProductService extends BaseService {
   getOutOfDateProducts() {
     return productCollection.find().exec();
   }
-};
+}
+
+module.exports = new ProductService();

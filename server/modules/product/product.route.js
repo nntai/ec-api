@@ -1,6 +1,5 @@
 const BaseRouter = require('../base/base.route');
-const ProductController = require('./product.controller');
-const productController = new ProductController();
+const productController = require('./product.controller');
 
 module.exports = class ProductRouter extends BaseRouter {
   constructor() {

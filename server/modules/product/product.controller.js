@@ -1,9 +1,7 @@
 const BaseController = require('../base/base.controller');
-const ProductService = require('./product.service');
+const productService = require('./product.service');
 
-const productService = new ProductService();
-
-module.exports = class ProductController extends BaseController {
+class ProductController extends BaseController {
   constructor() {
     super(productService);
   }
@@ -18,4 +16,6 @@ module.exports = class ProductController extends BaseController {
       res.status(400).send(err);
     }
   }
-};
+}
+
+module.exports = new ProductController();

@@ -1,6 +1,5 @@
 const BaseRouter = require('../base/base.route');
-const OrderController = require('./order.controller');
-const orderController = new OrderController();
+const orderController = require('./order.controller');
 
 module.exports = class OrderRouter extends BaseRouter {
   constructor() {

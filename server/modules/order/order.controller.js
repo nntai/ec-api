@@ -1,12 +1,12 @@
 const BaseController = require('../base/base.controller');
-const OrderService = require('./order.service');
+const orderService = require('./order.service');
 
-const productService = new OrderService();
-
-module.exports = class OrderController extends BaseController {
+class OrderController extends BaseController {
   constructor() {
-    super(productService);
+    super(orderService);
   }
 
   // TODO: define controllers here
-};
+}
+
+module.exports = new OrderController();
