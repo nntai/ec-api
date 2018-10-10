@@ -9,15 +9,16 @@ import StorePage from 'containers/StorePage/Loadable';
 
 export default function App({ history }) {
   return (
-    <div>
+    <div className="layout-main">
       <Router history={history}>
-        <div className="layout-main">
-          <Route path="/" component={MainLayout} />
-          <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route exact path="/store" component={StorePage} />
-            <Route path="*" component={NotFoundPage} />
-          </Switch>
+        <div>
+          <MainLayout>
+            <Switch>
+              <Route exact path="/" component={HomePage} />
+              <Route exact path="/store" component={StorePage} />
+              <Route path="*" component={NotFoundPage} />
+            </Switch>
+          </MainLayout>
         </div>
       </Router>
     </div>
